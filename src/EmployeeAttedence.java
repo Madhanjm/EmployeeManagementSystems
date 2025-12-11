@@ -18,10 +18,12 @@ public class EmployeeAttedence {
                 break;
 
             case FULL_TIME:
+                System.out.println("Employee is Present (Full Time)");
                 System.out.println("Full Time Wages: " + empWages.full_time_wages());
                 break;
 
             case PART_TIME:
+                System.out.println("Employee is Present (Part Time)");
                 System.out.println("Part Time Wages: " + empWages.part_time_wages());
                 break;
         }
