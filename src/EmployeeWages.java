@@ -14,4 +14,26 @@ public class EmployeeWages {
         return wage_Per_Hour*part_Time_Hour;
     }
 
+    public static int monthlyWages(){
+        int totalWage=0;
+        for(int day=1;day<=20;day++){
+
+            int empStatus=new Random().nextInt(3);
+            switch (empStatus){
+                case EmployeeAttedence.FULL_TIME :
+                    totalWage+=full_time_wages();
+                    break;
+                case EmployeeAttedence.PART_TIME:
+                    totalWage+=part_time_wages();
+                    break;
+                case EmployeeAttedence.IS_ABSENT:
+                    totalWage+=0;
+                    break;
+            }
+        }
+        return totalWage;
+    }
+
+
+
 }

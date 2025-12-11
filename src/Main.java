@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
             System.out.println("Welcome to Employee Mangement System");
 
-            EmployeeAttedence empAtted=new EmployeeAttedence();
-            empAtted.isEmployeeStatus();
+            EmployeeAttedence.isEmployeeStatus();
 
+            System.out.println("Monthly wages for 20 Days: "+EmployeeWages.monthlyWages());
 
     }
     }
