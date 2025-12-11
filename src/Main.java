@@ -8,5 +8,7 @@ public class Main {
 
             System.out.println("Monthly wages for 20 Days: "+EmployeeWages.monthlyWages());
 
+            System.out.println("Wages till (100hrs or 20days):"+EmployeeWages.calculateWagesTillCondition());
+
     }
     }

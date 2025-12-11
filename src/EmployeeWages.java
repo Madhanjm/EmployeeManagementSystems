@@ -34,6 +34,39 @@ public class EmployeeWages {
         return totalWage;
     }
 
+    public static int calculateWagesTillCondition(){
+        int totalHours=0;
+        int totalDays=0;
+        int totalWages=0;
+
+        Random random=new Random();
+
+        while(totalHours<100 && totalDays<20){
+
+            int empStatus= random.nextInt(3);
+            int dailyHours=0;
+
+            switch (empStatus){
+                case EmployeeAttedence.FULL_TIME :
+                    dailyHours=full_day_hours;
+                    break;
+                case EmployeeAttedence.PART_TIME:
+                    dailyHours=part_Time_Hour;
+                    break;
+                case EmployeeAttedence.IS_ABSENT:
+                    dailyHours=0;
+                    break;
+            }
+            totalHours+=dailyHours;
+            totalDays++;
+
+            totalWages+=dailyHours*wage_Per_Hour;
+        }
+        return totalWages;
+
+
+    }
+
 
 
 }
