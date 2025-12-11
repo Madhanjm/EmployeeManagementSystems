@@ -6,9 +6,9 @@ public class Main {
 
             EmployeeAttedence.isEmployeeStatus();
 
-            System.out.println("Monthly wages for 20 Days: "+EmployeeWages.monthlyWages());
+            System.out.println("Monthly wages for 20 Days: "+EmployeeAttedence.monthlyWages());
 
-            System.out.println("Wages till (100hrs or 20days):"+EmployeeWages.calculateWagesTillCondition());
+            System.out.println("Wages till (100hrs or 20days):"+EmployeeAttedence.calculateWagesTillCondition());
 
     }
     }
