@@ -6,5 +6,8 @@ public class Main {
 
             EmployeeAttedence empAtted=new EmployeeAttedence();
             empAtted.isEmployeePresent();
-        }
+
+        EmployeeWages empWages = new EmployeeWages();
+
+    }
     }
