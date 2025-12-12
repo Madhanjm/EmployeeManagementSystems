@@ -4,11 +4,9 @@ public class Main {
     public static void main(String[] args) {
             System.out.println("Welcome to Employee Mangement System");
 
-            EmployeeAttedence.isEmployeeStatus();
 
-            System.out.println("Monthly wages for 20 Days: "+EmployeeAttedence.monthlyWages());
-
-            System.out.println("Wages till (100hrs or 20days):"+EmployeeAttedence.calculateWagesTillCondition());
+        Employee.computeCompanyWages("TCS",20,20,100);
+        Employee.computeCompanyWages("Wipro",20,21,120);
 
     }
     }
