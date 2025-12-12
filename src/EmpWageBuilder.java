@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class EmpWageBuilder {
+public class EmpWageBuilder implements InterfaceEmployeeWage{
 
      public static final int IS_ABSENT=0;
     public static final int FULL_TIME=1;
@@ -15,12 +15,13 @@ public class EmpWageBuilder {
         companyArray=new CompanyEmpWage[size];
     }
 
-
+    @Override
     public void addCompany(String companyName,int wagePerHour,int workingDays,int maxWorkingHours){
         companyArray[companyCount]=new CompanyEmpWage(companyName,wagePerHour,workingDays,maxWorkingHours);
         companyCount++;
     }
 
+    @Override
     public void computeWages(){
         for(int i=0;i<companyCount;i++){
             CompanyEmpWage company=companyArray[i];
