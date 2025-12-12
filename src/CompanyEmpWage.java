@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 public class CompanyEmpWage {
 
@@ -7,13 +8,22 @@ public class CompanyEmpWage {
     public  int workingDays;
     public  int maxMonthlyHours;
 
+
     public  int totalWages;
+
+    public ArrayList<Integer> dailyWageList;
 
     public CompanyEmpWage(String companyName, int wagesPerHour, int workingDays, int maxMonthlyHours) {
         this.companyName=companyName;
         this.wagesPerHour=wagesPerHour;
         this.workingDays=workingDays;
         this.maxMonthlyHours=maxMonthlyHours;
+
+        dailyWageList= new ArrayList<>();
+    }
+
+    public void addDailyWage(int dailyWage){
+        dailyWageList.add(dailyWage);
     }
 
     public  void setTotalWages(int totalWages) {
@@ -22,7 +32,9 @@ public class CompanyEmpWage {
 
     @Override
     public String toString(){
-        return "Total Employee Wage for "+companyName+" = "+totalWages;
+        return "\nCompany: "+companyName+
+                "\nDailyWage: "+dailyWageList+
+                "\nTotal Monthly wage = "+totalWages;
     }
 
 

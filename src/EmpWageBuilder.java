@@ -59,10 +59,13 @@ public class EmpWageBuilder implements InterfaceEmployeeWage{
             int dailyHours=getDailyHours();
             totalHours+=dailyHours;
             totaldays++;
+            int dailyWage=dailyHours*company.wagesPerHour;
 
             totalWages+=dailyHours*company.wagesPerHour;
 
-            System.out.println(company.companyName+" - Day "+ totaldays+ "| Hours: "+dailyHours+ " | Wage: "+(dailyHours*company.wagesPerHour));
+            company.addDailyWage(dailyWage);
+
+            System.out.println(company.companyName+" - Day "+ totaldays+ "| Hours: "+dailyHours+ " | Wage: "+dailyWage);
 
         }
         System.out.println("Total Montly Wages for "+company.companyName+" = "+totalWages);
