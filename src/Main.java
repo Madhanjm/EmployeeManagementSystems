@@ -3,10 +3,9 @@
 public class Main {
     public static void main(String[] args) {
             System.out.println("Welcome to Employee Mangement System");
-
-
-        Employee.computeCompanyWages("TCS",20,20,100);
-        Employee.computeCompanyWages("Wipro",20,21,120);
-
+            EmpWageBuilder empBuilder = new EmpWageBuilder();
+        empBuilder.addCompany("TCS",20,20,100);
+        empBuilder.addCompany("Wipro",20,21,120);
+        empBuilder.computeWages();
     }
     }
