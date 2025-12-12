@@ -8,23 +8,21 @@ public class EmpWageBuilder implements InterfaceEmployeeWage{
     public static final int PART_TIME=2;
 
     //private ArrayList<CompanyEmpWage> companyList = new ArrayList<>();
-    private CompanyEmpWage[] companyArray;
-    private int companyCount;
+    private ArrayList<CompanyEmpWage> companyList;
 
-    public EmpWageBuilder(int size){
-        companyArray=new CompanyEmpWage[size];
+    public EmpWageBuilder( ){
+        companyList=new ArrayList<>();
     }
 
     @Override
     public void addCompany(String companyName,int wagePerHour,int workingDays,int maxWorkingHours){
-        companyArray[companyCount]=new CompanyEmpWage(companyName,wagePerHour,workingDays,maxWorkingHours);
-        companyCount++;
+        CompanyEmpWage company =new CompanyEmpWage(companyName,wagePerHour,workingDays,maxWorkingHours);
+        companyList.add(company);
     }
 
     @Override
     public void computeWages(){
-        for(int i=0;i<companyCount;i++){
-            CompanyEmpWage company=companyArray[i];
+        for(CompanyEmpWage company  : companyList){
             int totalWage=computeCompanyWages(company);
             company.setTotalWages(totalWage);
             System.out.println(company);
