@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class EmpWageBuilder implements InterfaceEmployeeWage{
@@ -9,6 +10,8 @@ public class EmpWageBuilder implements InterfaceEmployeeWage{
 
     //private ArrayList<CompanyEmpWage> companyList = new ArrayList<>();
     private ArrayList<CompanyEmpWage> companyList;
+    private HashMap<String,CompanyEmpWage> companyMap=new HashMap<>();
+
 
     public EmpWageBuilder( ){
         companyList=new ArrayList<>();
@@ -18,6 +21,7 @@ public class EmpWageBuilder implements InterfaceEmployeeWage{
     public void addCompany(String companyName,int wagePerHour,int workingDays,int maxWorkingHours){
         CompanyEmpWage company =new CompanyEmpWage(companyName,wagePerHour,workingDays,maxWorkingHours);
         companyList.add(company);
+        companyMap.put(companyName,company);
     }
 
     @Override
@@ -73,6 +77,17 @@ public class EmpWageBuilder implements InterfaceEmployeeWage{
         return totalWages;
 
     }
+
+
+    public int getTotalWageByCompany(String companyName){
+        if(companyMap.containsKey(companyName)){
+            return companyMap.get(companyName).totalWages;
+        }else{
+            System.out.println("Company not found");
+            return -1;
+        }
+    }
+
 }
 
 
